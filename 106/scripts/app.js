@@ -4,6 +4,7 @@ let isImportant = false;
 let isVisible = true;
 //Jquery
 
+
 function toggleImportant(){
 
 
@@ -28,7 +29,9 @@ function toggleView(){
     }
 }
 
+function clearTask(){
 
+}
 
 function saveTasks(){
     let title = $("#txtTitle").val();
@@ -45,6 +48,7 @@ function saveTasks(){
         dueDate,
         priority
         );
+        
         $.ajax({
             type: "POST" ,
             url: "http://fsdiapi.azurewebsites.net/api/tasks/" ,
@@ -93,12 +97,24 @@ function loadTask(){
     });
 }
 
+function deleteTask(index) {
+    if (index >= 0 && index < tasks.length) {
+        tasks.splice(index, 1);
+        
+    }
+}
+
+
+
+
+
 function init()
 {
     loadTask();
     $("#toggleView").click(toggleView);
     $("#formIcon").click(toggleImportant);
     $("#btnSave").click(saveTasks);
+    
 }
 
 window.onload = init;

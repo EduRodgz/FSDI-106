@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="btn-dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +15,13 @@
     <div class="parent">
         <section id="list"> 
             <button id="toggleView" class="btn btn-primary">Show/Hide</button>
+            <ul id="taskList"></ul>
                 <div id="pending-task">
-        <!--render the task-->
                 </div>
+                <div class="field button-container">
+                    <button id="btnDelete" class="btn btn-danger">Delete Task</button>
+                </div>
+                
         </section>
 
         <section id="form">
@@ -27,7 +31,7 @@
                 </div>
                 <div>
                     <label for="form-label">Title</label>
-                    <input id="txtTitle" type="text" class="form-control">
+                    <textarea id="txtTitle" type="text" class="form-control"></textarea>
                 </div>
                 <div>
                     <label for="form-label">Description</label>
@@ -35,7 +39,7 @@
                 </div>
                 <div>
                     <label for="form-label">Date</label>
-                    <input id="selDueDate" type="datetime-local" class="form-control">
+                    <input id="selDueDate" type="datetime-local" class="form-control"></input>
                 </div>
                 <!--Create some inputs for catergory / Work / Family / Personal-->
                 <div class="field">
@@ -59,6 +63,9 @@
                 <!--Button to save in btn-dark-->
                 <div class="field button-container">
                     <button id = "btnSave" class="btn btn-dark">Save</button>
+                </div>
+                <div class="field button-container">
+                    <button id="btnClear" class="btn btn-dark">Clear</button>
                 </div>
         </section>
         </div>
